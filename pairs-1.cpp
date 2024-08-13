@@ -11,39 +11,42 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #include <unordered_set>
 using namespace std;
 
-vector<int> findPair(vector<int> arr, int S)
+vector<vector<int>> findPair(vector<int> arr, int S)
 {
     unordered_set<int> st;
-    vector<int> result;
+    vector<vector<int>> result;
     for (int i = 0; i < arr.size(); i++)
     {
         int x = S - arr[i];
         if (st.find(x) != st.end())
         {
-            result.push_back(x);
-            result.push_back(arr[i]);
-            return result;
+            result.push_back({min(x, arr[i]), max(x, arr[i])});
         }
         st.insert(arr[i]);
     }
-    return {};
+    sort(result.begin(), result.end());
+    return result;
 }
 
 int main()
 {
-    vector<int> arr = {10, 5, 2, 3, -6, 9, 11};
+    vector<int> arr = {10, 5, 2, 2, 3, -6, 9, 11};
     int S = 4;
-    vector<int> result = findPair(arr, S);
+    vector<vector<int>> result = findPair(arr, S);
     if (result.size() == 0)
     {
         cout << "No such pair";
     }
     else
     {
-        cout << result[0] << "," << result[1];
+        for (auto i : result)
+        {
+            cout << i[0] << "," << i[1] << endl;
+        }
     }
     return 0;
 }
