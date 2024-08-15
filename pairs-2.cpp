@@ -2,7 +2,7 @@
 // Note:
 // Each pair should be sorted i.e the first value should be less than or equals to the second value.
 // Return the list of pairs sorted in non-decreasing order of their first value. In case if two pairs have the same first value, the pair with a smaller second value should come first.
-
+//Solving problem in O(n^2) time complexity
 #include <iostream>
 #include <vector>
 #include <algorithm>

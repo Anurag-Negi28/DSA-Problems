@@ -26,6 +26,7 @@ int LongestMountain(vector<int> arr)
                 j--;
                 count++;
             }
+            //count forwards
             while (i <= n - 2 && arr[i] > arr[i + 1])
             {
                 i++;
