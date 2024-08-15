@@ -34,7 +34,7 @@ vector<vector<int>> findPair(vector<int> arr, int S)
 
 int main()
 {
-    vector<int> arr = {10, 5, 2, 2, 3, -6, 9, 11};
+    vector<int> arr = {10, 5, 2, 2, 3, 1, -1, -6, 9, 11};
     int S = 4;
     vector<vector<int>> result = findPair(arr, S);
     if (result.size() == 0)
