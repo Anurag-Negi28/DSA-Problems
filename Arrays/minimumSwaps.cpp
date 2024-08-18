@@ -6,7 +6,7 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
-
+// Function to find minimum swaps
 int minimumSwap(vector<int> arr)
 {
     vector<pair<int, int>> v;
@@ -35,7 +35,7 @@ int minimumSwap(vector<int> arr)
     }
     return ans;
 }
-
+// Driver code
 int main()
 {
     vector<int> arr = {10, 11, 5, 4, 3, 2, 1};
