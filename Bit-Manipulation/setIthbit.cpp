@@ -15,6 +15,15 @@ int setIthBit(int n, int i)
     return n | mask;
 }
 
+// Clear ith bit of a number
+int clearIthBit(int n, int i)
+{
+    int mask = ~(1 << i);
+    return n & mask;
+}
+
+// Update ith Bit of a number
+
 int main()
 {
     int n, i;
@@ -22,5 +31,7 @@ int main()
     cout << getIthBit(n, i);
     cout << endl
          << setIthBit(n, i);
+    cout << endl
+         << clearIthBit(n, i);
     return 0;
 }
