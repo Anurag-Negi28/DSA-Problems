@@ -23,15 +23,23 @@ int clearIthBit(int n, int i)
 }
 
 // Update ith Bit of a number
+int updateIthBit(int &n, int i, int v)
+{
+    clearIthBit(n, i);
+    int mask = (v << i);
+    return n | mask;
+}
 
 int main()
 {
-    int n, i;
-    cin >> n >> i;
+    int n, i, v;
+    cin >> n >> i >> v;
     cout << getIthBit(n, i);
     cout << endl
          << setIthBit(n, i);
     cout << endl
          << clearIthBit(n, i);
+    cout << endl
+         << updateIthBit(n, i, v);
     return 0;
 }
