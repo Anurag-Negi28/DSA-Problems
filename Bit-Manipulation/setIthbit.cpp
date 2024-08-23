@@ -30,6 +30,13 @@ int updateIthBit(int &n, int i, int v)
     return n | mask;
 }
 
+// Clear ith Bit of a number
+int clearLastIBits(int n, int i)
+{
+    int mask = (-1 << i);
+    return n & mask;
+}
+
 int main()
 {
     int n, i, v;
@@ -41,5 +48,7 @@ int main()
          << clearIthBit(n, i);
     cout << endl
          << updateIthBit(n, i, v);
+    cout << endl
+         << clearLastIBits(n, i);
     return 0;
 }
