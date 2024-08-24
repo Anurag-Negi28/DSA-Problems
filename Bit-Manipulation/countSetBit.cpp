@@ -16,7 +16,7 @@ int countSetBits(int n)
 int countSetBitFast(int n)
 {
     int count = 0;
-    while (n > 0)
+    while (n > 0) // This loop will run only the number of times as there are one's in the numbers
     {
         n = n & (n - 1);
         count++;
