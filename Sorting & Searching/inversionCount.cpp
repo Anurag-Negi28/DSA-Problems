@@ -52,28 +52,25 @@ int merge(vector<int> &arr, int s, int e)
     return count;
 }
 
-int inversionSort(vector<int> &arr, int s, int e)
+int inversionCount(vector<int> &arr, int s, int e)
 {
     // base case
     if (s >= e)
     {
-        return;
+        return 0;
     }
     // divide the array into two parts
     int m = (s + e) / 2;
-    int C1 = inversionSort(arr, s, m);     // count of inversions in left half
-    int C2 = inversionSort(arr, m + 1, e); // count of inversions in right half
-    int CI = merge(arr, s, e);             // count of inversions in merged array
-    return (C1 + C2 + CI);                 // total count of inversions
+    int C1 = inversionCount(arr, s, m);     // count of inversions in left half
+    int C2 = inversionCount(arr, m + 1, e); // count of inversions in right half
+    int CI = merge(arr, s, e);              // count of inversions in merged array
+    return (C1 + C2 + CI);                  // total count of inversions
 }
 
 int main()
 {
-    vector<int> arr = {10, 5, 2, 2, 3, 1, -1, -6, 9, 11};
-    inversionSort(arr, 0, arr.size() - 1);
-    for (auto i : arr)
-    {
-        cout << i << " ";
-    }
+    vector<int> arr = {0, 5, 2, 3, 1};
+    int count = inversionCount(arr, 0, arr.size() - 1);
+    cout << count;
     return 0;
 }
