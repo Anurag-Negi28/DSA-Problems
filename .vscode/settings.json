@@ -1,6 +1,7 @@
 {
-    "files.associations": {
-        "*.tcc": "cpp",
-        "climits": "cpp"
-    }
+  "files.associations": {
+    "*.tcc": "cpp",
+    "climits": "cpp",
+    "regex": "cpp"
+  }
 }
