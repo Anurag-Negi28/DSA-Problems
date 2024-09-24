@@ -64,7 +64,7 @@ int spareseSearch(vector<string> s, string key)
 int main()
 {
     vector<string> s = {"ai", "", "", "bat", "", "car", "cat", "", "dog"};
-    string key = "bat";
+    string key = "dog";
     cout << spareseSearch(s, key);
     return 0;
 }
