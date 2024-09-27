@@ -19,19 +19,19 @@ int rotatedArray(vector<int> arr, int k)
     int low = 0, high = n - 1;
     while (low <= high)
     {
-        int mid = low + (high - low) / 2;
+        int mid = low + (high - low) / 2; // Avoids the risk of overflow for int data type
         if (arr[mid] == k)
             return mid;
         if (arr[low] <= arr[mid])
         {
-            if (arr[low] <= 4 && 4 < arr[mid])
+            if (arr[low] <= k && k < arr[mid])
                 high = mid - 1;
             else
                 low = mid + 1;
         }
         else
         {
-            if (arr[mid] < 4 && 4 <= arr[high])
+            if (arr[mid] < k && k <= arr[high])
                 low = mid + 1;
             else
                 high = mid - 1;
@@ -43,7 +43,7 @@ int rotatedArray(vector<int> arr, int k)
 int main()
 {
     vector<int> arr = {7, 9, 10, 1, 2, 3, 4, 5, 6};
-    int k = 4;
+    int k = 6;
     cout << rotatedArray(arr, k) << endl;
     return 0;
 }
