@@ -17,6 +17,7 @@ float squareRoot(int n, int p)
 {
     int low = 0, high = n - 1;
     float ans = -1.0;
+    // Binary Search Part
     while (low <= high)
     {
         int mid = low + (high - low) / 2;
@@ -35,6 +36,7 @@ float squareRoot(int n, int p)
             high = mid - 1;
         }
     }
+    // Linear Search part
     float inc = 0.1;
     for (int i = 0; i < p; i++)
     {
@@ -42,7 +44,9 @@ float squareRoot(int n, int p)
         {
             ans += inc;
         }
+        // Take one step back
         ans -= inc;
+        // Move the decimal one place back
         inc = inc / 10;
     }
     return ans;
