@@ -55,7 +55,7 @@ bool canDivide(vector<int> arr, int middle, int k)
             continue;
         }
     }
-    if (count == k)
+    if (count >= k) // Check for minimum k segments and if they exceed as well
     {
         return true;
     }
