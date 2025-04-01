@@ -7,7 +7,7 @@
 #include <climits>
 using namespace std;
 
-int prefixSumSubarray(int *arr, int n)
+int maxSumSubarray(int *arr, int n)
 {
     int maxSumSubarray = INT_MIN;
     int cs = 0;
@@ -27,5 +27,5 @@ int main()
 {
     int arr[] = {1, -2, 3, -4, -5};
     int n = sizeof(arr) / sizeof(arr[0]);
-    cout << "Largest sum of Subarray " << prefixSumSubarray(arr, n);
+    cout << "Largest sum of Subarray " << maxSumSubarray(arr, n);
 }
