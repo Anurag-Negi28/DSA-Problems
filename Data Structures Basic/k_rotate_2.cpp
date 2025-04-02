@@ -8,29 +8,17 @@ vector<int> kRotate(vector<int> a, int k)
 {
     // your code  goes here
     int n = a.size();
-    k = k % n; // Corrected modulo operation
-    int s = 0;
-    int e = n - k;
-    int end = n - 1;
-    while (s < e)
-    {
-        swap(a[s], a[e]);
-        s++;
-        e--;
-    }
-    while (e < end)
-    {
-        swap(a[e], a[end]);
-        e++;
-        end--;
-    }
+    k = k % n; //  effective rotations
+    reverse(a.begin(), a.begin() + n - k);
+    reverse(a.begin() + n - k, a.end());
+    reverse(a.begin(), a.end());
     return a;
 }
 
 int main()
 {
-    vector<int> a = {1, 2, 3, 4, 5};
-    int k = 2;
+    vector<int> a = {1, 2, 3, 4, 5, 6, 7};
+    int k = 3;
     vector<int> rotatedArray = kRotate(a, k);
 
     cout << "Rotated Array: ";
