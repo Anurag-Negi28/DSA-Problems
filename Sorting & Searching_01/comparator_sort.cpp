@@ -5,7 +5,7 @@ vector<int> sortingWithComparator(vector<int> arr, bool flag)
 {
     // your code  goes here
     sort(arr.begin(), arr.end(), [flag](int a, int b)
-         { return flag ? a < b : a > b; });
+         { return flag ? a < b : a > b; }); // using lamda funtion to decide the comparison logic.
     return arr;
 }
 
