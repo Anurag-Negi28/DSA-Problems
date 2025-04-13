@@ -50,6 +50,17 @@ int mangoTree(vector<vector<int>> matrix)
         }
     }
 
+    // Print the prefixSum matrix
+    cout << "Prefix Sum Matrix:" << endl;
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            cout << prefixSum[i][j] << "    ";
+        }
+        cout << endl;
+    }
+
     // Step 2: Iterate over all possible horizontal and vertical cuts
     int maxMangoes = 0;
     for (int rowCut = 0; rowCut < m - 1; rowCut++)

@@ -20,7 +20,7 @@ pair<int, int> searchMatrix(vector<vector<int>> &matrix, int target)
         {
             return {i, j};
         }
-        else if (matrix[i][j] >= target) // move either left if the current value is greater than the target
+        else if (matrix[i][j] > target) // move either left if the current value is greater than the target
         {
             j--;
         }
