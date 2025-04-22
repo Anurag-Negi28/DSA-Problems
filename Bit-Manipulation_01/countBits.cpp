@@ -14,9 +14,19 @@ int countBits(int a)
     }
     return count;
 }
+int countBitsOptimized(int n)
+{
+    int count = 0;
+    while (n > 0)
+    {
+        n = n & (n - 1);
+        count++;
+    }
+    return count;
+}
 int main()
 {
-    int a = 5;
-    int count = countBits(a);
-    cout << "No. of set bits in a are " << count;
+    int a = 9999999;
+    int count = countBitsOptimized(a);
+    cout << "No. of set bits in a are " << count << endl;
 }
