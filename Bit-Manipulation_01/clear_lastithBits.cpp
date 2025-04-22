@@ -16,13 +16,22 @@ void clearRangeofbits(int &a, int i, int j)
     int mask = x | y;
     a = a & mask;
 }
+void replaceBits(int &a, int i, int j, int m)
+{
+    clearRangeofbits(a, i, j);
+    int mask = m << i;
+    a = a | mask;
+}
 int main()
 {
     int a = 31;
     int i = 1;
     int j = 3;
+    int m = 2;
     // clear_lastithBit(a, i);
     // cout << "Cleared ith bit " << a << endl;
-    clearRangeofbits(a, i, j);
-    cout << "Cleared range of bits " << a << endl;
+    // clearRangeofbits(a, i, j);
+    // cout << "Cleared range of bits " << a << endl;
+    replaceBits(a, i, j, m);
+    cout << "Replace bits " << a << endl;
 }
