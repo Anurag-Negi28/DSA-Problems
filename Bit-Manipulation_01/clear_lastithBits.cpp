@@ -9,10 +9,20 @@ void clear_lastithBit(int &a, int i)
     int mask = -1 << i;
     a = a & (mask);
 }
+void clearRangeofbits(int &a, int i, int j)
+{
+    int x = (~0) << (j + 1);
+    int y = (1 << i) - 1;
+    int mask = x | y;
+    a = a & mask;
+}
 int main()
 {
-    int a = 5;
-    int i = 2;
-    clear_lastithBit(a, i);
-    cout << "Cleared ith bit " << a;
+    int a = 31;
+    int i = 1;
+    int j = 3;
+    // clear_lastithBit(a, i);
+    // cout << "Cleared ith bit " << a << endl;
+    clearRangeofbits(a, i, j);
+    cout << "Cleared range of bits " << a << endl;
 }
