@@ -9,7 +9,7 @@ int main()
     v.push_back(10);
     v.push_back(15);
     v.push_back(25);
-    v.push_back(25);
+    v.push_back(26);
 
     cout << v.at(2) << endl;
     cout << v.front() << endl;
