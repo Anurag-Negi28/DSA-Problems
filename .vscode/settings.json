@@ -69,5 +69,7 @@
     "typeindex": "cpp",
     "typeinfo": "cpp",
     "valarray": "cpp"
-  }
+  },
+  "github.copilot.chat.agent.thinkingTool": true,
+  "github.copilot.chat.editor.temporalContext.enabled": true
 }
