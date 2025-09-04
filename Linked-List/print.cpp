@@ -18,14 +18,20 @@ int main()
     lst.push_front(1);
     lst.push_front(5);
     lst.push_back(0);
+    lst.push_back(10);
+    lst.push_back(20);
+    lst.push_back(30);
     lst.push_back(6);
     lst.insert(3, 2);
     lst.pop_front();
     lst.pop_back();
     lst.remove(2);
+    lst.reverse();
     print(lst);
+    /*
     cout << endl
          << 0 << " is at index "
          << lst.search(0) << endl;
+    */
     return 0;
 }

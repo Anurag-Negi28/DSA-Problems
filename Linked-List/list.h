@@ -150,4 +150,21 @@ public:
         target->next = nullptr;
         delete target;
     }
+    void reverse()
+    {
+        if (head == nullptr)
+            return;
+        Node *current = head;
+        Node *temp = nullptr;
+        Node *prev = nullptr;
+        tail = head;
+        while (current != nullptr)
+        {
+            temp = current->next;
+            current->next = prev;
+            prev = current;
+            current = temp;
+        }
+        head = prev;
+    }
 };
