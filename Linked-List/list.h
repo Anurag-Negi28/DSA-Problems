@@ -1,3 +1,5 @@
+#include <iostream>
+using namespace std;
 // Header file for Linked List using Objects and classes
 class list; // Forward Declaration
 class Node
@@ -14,6 +16,7 @@ public:
         return data;
     }
     friend class list; // lsit class can use private member functions of Node class
+    // Destructor
 };
 class list
 {
@@ -80,5 +83,71 @@ public:
             temp = temp->next;
         }
         return -1;
+    }
+    // Destructor
+    /*
+    ~list()
+    {
+        Node *temp = head;
+        while (temp != nullptr)
+        {
+            cout << "Node deleted " << temp->getData() << endl; // print before deleting for forward order
+            Node *next = temp->next;
+            delete temp;
+            temp = next;
+        }
+        head = tail = nullptr;
+    }
+    */
+    void pop_front()
+    {
+        if (head == nullptr)
+            return;
+        Node *temp = head;
+        head = head->next;
+        delete temp;
+        if (head == nullptr)
+            tail = nullptr;
+    }
+    void pop_back()
+    {
+        if (head == nullptr)
+            return;
+        if (head == tail)
+        {
+            delete head;
+            head = tail = nullptr;
+            return;
+        }
+        Node *prev = head;
+        while (prev->next != tail)
+        {
+            prev = prev->next;
+        }
+        delete tail;
+        tail = prev;
+        tail->next = nullptr;
+    }
+    void remove(int pos)
+    {
+        // If empty list
+        if (head == nullptr)
+            return;
+        Node *prev = head;
+        // prev is the node before the target
+        for (int i = 1; i < pos - 1 && prev->next != nullptr; i++)
+        {
+            prev = prev->next;
+        }
+        Node *target = prev->next;
+        if (target == nullptr) // pos out of range
+            return;
+        prev->next = target->next;
+        if (target == tail)
+        {
+            tail = prev;
+        }
+        target->next = nullptr;
+        delete target;
     }
 };
