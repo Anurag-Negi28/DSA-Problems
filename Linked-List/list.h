@@ -55,4 +55,30 @@ public:
             tail = n;
         }
     }
+    void insert(int data, int pos)
+    {
+        Node *temp = head;
+        for (int jump = 0; jump < pos - 1; jump++)
+        {
+            temp = temp->next;
+        }
+        Node *n = new Node(data);
+        n->next = temp->next;
+        temp->next = n;
+    }
+    int search(int key)
+    {
+        Node *temp = head;
+        int idx = 0;
+        while (temp != nullptr)
+        {
+            if (temp->data == key)
+            {
+                return idx;
+            }
+            idx++;
+            temp = temp->next;
+        }
+        return -1;
+    }
 };
